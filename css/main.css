@@ -1,0 +1,526 @@
+html, body {
+  overflow-x: hidden;
+}
+
+/**
+ * Enable smooth scrolling on the whole document
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+/**
+ * Disable smooth scrolling when users have prefers-reduced-motion enabled
+ */
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/**
+ * Add .section to every anchored element for scroll margin
+ */
+.section {
+  scroll-margin-top: 2rem;
+}
+
+/* Header */
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 3rem;
+  text-decoration: none;
+}
+
+@media (min-width: 48em) {
+  .site-title {
+    float: left;
+  }
+}
+
+.nav-link {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.social-nav .nav-link {
+  padding: 0 0.5rem;
+  font-size: 1.1rem;
+  line-height: 2.5rem;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.active .nav-link {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Hero (intro) section */
+.intro-title {
+  font-weight: 800;
+}
+
+@-webkit-keyframes animateWave {
+  0% {
+    transform: scale(1, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes animateWave {
+  0% {
+    transform: scale(1, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.wave-bg {
+  display: block;
+  height: 220px;
+  width: 100%;
+  min-width: 600px;
+  transform-origin: top;
+  -webkit-animation: animateWave 2000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+          animation: animateWave 2000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  background-image: url("../images/wave-bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+img.avatar {
+  border-radius: 30px;
+}
+
+/* Masonary grid for portfolio */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* Grid Item */
+.grid-sizer,
+.grid-item {
+  width: 100%;
+}
+
+.grid-item {
+  padding-bottom: 12px;
+}
+
+@media (min-width: 48em) {
+  .grid-sizer,
+  .grid-item {
+    width: 25%;
+  }
+  .grid-item {
+    float: left;
+    padding: 6px;
+  }
+}
+
+.grid-item img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Portfolio */
+.portolio-section .container {
+  padding: 0;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin: 0;
+}
+
+.portfolio-item figcaption {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  transition: transform 0.35s;
+  transform: translate3d(0, 100%, 0);
+}
+
+.portfolio-item figcaption h4 {
+  color: #222;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.portfolio-item figcaption p {
+  color: #444;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.portfolio-item:hover figcaption {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Portolio Caption */
+#bp_container .bp-xc {
+  background: #F6E05E !important;
+}
+
+#bp_caption a {
+  text-decoration: none;
+}
+
+/* Footer section */
+footer a:not(.nav-link) {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.portfolio-item img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.portfolio-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.portfolio-item figcaption {
+  pointer-events: none;
+}
+
+.portfolio-item {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Scroll Top */
+#scrolltop {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease-in;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+#scrolltop .btn {
+  padding: 3px 11px;
+  border-radius: 50%;
+}
+
+/* Additional utility styles */
+.container-narrow {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* Updated spacing for service boxes */
+.services .icon-box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+  min-height: 100%;
+  margin-bottom: 30px;
+}
+
+.services .row {
+  margin-bottom: -30px;
+}
+
+/* Icon styling */
+.services .service-icon {
+  width: 64px;
+  height: 64px;
+  background: #f6e05e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.services .service-icon i {
+  font-size: 28px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.services .icon-box:hover .service-icon {
+  background: #c5b34b; 
+  transform: scale(1.1);
+}
+
+
+.services .icon-box h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.services .icon-box h4 a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.services .icon-box h4 a:hover {
+  color: #f6e05e;
+}
+
+.services .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.services .icon-box ul {
+  padding-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  list-style: none; 
+}
+
+.services .icon-box ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+  position: relative;
+  padding-left: 20px; 
+}
+
+
+.services .icon-box ul li:before {
+  content: "•";
+  color: #000000;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+
+.services .col-lg-4,
+.services .col-md-6 {
+  margin-bottom: 30px;
+}
+
+
+.services .icon-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Timeline Styles */
+.timeline-item {
+  padding-left: 30px;
+  position: relative;
+  margin-bottom: 30px;
+
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #f6e05e;
+}
+
+.wave {
+  display: inline-block;
+  animation: wave-animation 1.5s infinite;
+  transform-origin: 70% 70%;
+  margin-left: 10px;
+}
+
+.tools-slider {
+  width: 100%;
+  
+}
+
+.tools-slider .swiper-pagination {
+  bottom: 0;
+}
+
+.tools-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #000000;
+}
+
+.tools-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #f6e05e;
+}
+
+.tool-item {
+  text-align: center;
+}
+
+.list-icons {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-icons li {
+  margin: 0 15px 30px 15px;
+}
+
+.list-icons img {
+  max-width: 100%;
+  transition: all 0.3s ease;
+}
+
+.list-icons img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+.centered-text {
+  text-align: center;
+}
+.timeline-marker::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #f6e05e;
+  border-radius: 50%;
+}
+
+/* Typography Styles */
+h1 {
+  font-weight: bold;
+  color: #333;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.text-small {
+  font-size: 0.875rem;
+}
+
+.text-uppercase {
+  letter-spacing: 0.05em;
+}
+
+.hover-effect {
+  transition: transform .18s ease-in-out;
+}
+
+.hover-effect:hover {
+  transform: translateY(-2px);
+}
+
+.marker {
+  position: relative;
+  display: inline;
+  width: auto;
+}
+
+.marker-center {
+  padding-right: 0;
+}
+
+.marker:after {
+  content: "";
+  width: 125px;
+  height: 30px;
+  position: absolute;
+  bottom: -25px;
+  right: -30px;
+  background-image: url("../images/marker.svg");
+  background-repeat: no-repeat;
+}
+
+.marker-center:after {
+  bottom: -30px;
+  left: 50%;
+  margin-left: -60px;
+}
+
+@media (max-width: 575.98px) {
+  .marker {
+    padding-right: 0;
+  }
+  .marker:after {
+    bottom: -30px;
+    left: 50%;
+    margin-left: -60px;
+  }
+}
+
+.entry-title a {
+  text-decoration: none;
+}
